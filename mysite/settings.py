@@ -25,7 +25,7 @@ SECRET_KEY = '@2lomyf61ntu$!@j)ik5562z=3=t^5u5(+uklm*s&1h_tilhos'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'forgci3.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'GCI3Openwisp.pythonanywhere.com']
 
 
 # Application definition
