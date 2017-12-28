@@ -1,28 +1,13 @@
-<html>
-    <head>
-        <title>Da Best Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Welcome to my first blog</a></h1>
-        </div>
-              {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-        <div>
-            <p>for google code-in/ openwisp</p>
-            <h2><a href="">A little info bout me</a></h2>
-            <p>So i am new to programming but i know i enjoy it immensely. Anyway this is my third task for GCI and i have to say it is the one i am enjoying most. Openwisp seems to be a great source to learn and the DjangoGirls are great(you were right; for both genders:p). Anyway so hope this goes well, fingers cossed!</p>
-        </div>
 
-        <div>
-            <p>here we go...</p>
-            <h2><a href="">My first post(yay)</a></h2>
-            <p>blah bkah blah blah blah blah blah blah blah blah blah blahblahblahblahblahblahblahblahblahblahblahblah</p>
-        </div>
-    </body>
-</html>
+                {% extends 'blog/base.html' %}
+                {% block content %}
+                    {% for post in posts %}
+                        <div class="post">
+                            <div class="date">
+                                <p>published: {{ post.published_date }}</p>
+                            </div>
+                            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                {% endblock %}
