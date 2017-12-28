@@ -6,7 +6,13 @@
         <div>
             <h1><a href="/">Welcome to my first blog</a></h1>
         </div>
-
+              {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
         <div>
             <p>for google code-in/ openwisp</p>
             <h2><a href="">A little info bout me</a></h2>
